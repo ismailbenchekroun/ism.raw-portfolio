@@ -7,12 +7,17 @@ title: Home
   <!-- Hero -->
   <section class="hero">
     <div class="hero-image fade-in">
-      <img src="{{ site.data.home.hero_image | relative_url }}" alt="{{ site.data.home.hero_image_alt }}" loading="eager">
+      <img
+        src="{{ site.data.home.hero_image | relative_url }}"
+        alt="{{ site.data.home.hero_image_alt }}"
+        loading="eager"
+        fetchpriority="high"
+      >
     </div>
     <div class="hero-content fade-in delay-1">
       <h1 class="hero-title">{{ site.data.home.hero_title }}</h1>
       <p class="hero-body">{{ site.data.home.hero_body }}</p>
-      <a href="{{ site.data.home.hero_cta_link | relative_url }}" class="btn">{{ site.data.home.hero_cta_label }}</a>
+      <button class="btn" onclick="openGalleryPicker()">{{ site.data.home.hero_cta_label }}</button>
     </div>
   </section>
 
@@ -22,7 +27,14 @@ title: Home
     <div class="journey-grid">
       {% for photo in site.data.home.journey_photos %}
       <div class="journey-item reveal{% if forloop.index > 1 %} delay-1{% endif %}">
-        <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+        <div class="journey-img-wrap">
+          <img
+            src="{{ photo.image | relative_url }}"
+            alt="{{ photo.alt }}"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
       </div>
       {% endfor %}
     </div>

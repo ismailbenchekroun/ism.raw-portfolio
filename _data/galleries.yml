@@ -1,0 +1,35 @@
+# Master list of all gallery collections
+# Each entry controls the gallery picker overlay and the /gallery/ index page
+
+- id: london-q1-26
+  title: "London Q1-26"
+  subtitle: "January – March 2026"
+  description: "Streets, landmarks and quiet geometry from London's first quarter."
+  cover: "/images/gallery/01.jpg"
+  cover_alt: "Yellow Southbank spiral stairs"
+  url: "/gallery/london-q1-26"
+  preview:
+    - "/images/gallery/01.jpg"
+    - "/images/gallery/03.jpg"
+
+- id: 4l-trophy
+  title: "4L Trophy"
+  subtitle: "France → Morocco"
+  description: "A humanitarian rally across two continents in an old Renault 4L."
+  cover: "/images/4l/cover.jpg"
+  cover_alt: "4L Trophy rally"
+  url: "/gallery/4l-trophy"
+  preview:
+    - "/images/4l/cover.jpg"
+    - "/images/4l/02.jpg"
+
+- id: travels
+  title: "Travels"
+  subtitle: "Ongoing"
+  description: "Moments collected across borders — beaches, jungles, roads."
+  cover: "/images/travels/cover.jpg"
+  cover_alt: "Tropical travel photography"
+  url: "/gallery/travels"
+  preview:
+    - "/images/travels/cover.jpg"
+    - "/images/travels/02.jpg"

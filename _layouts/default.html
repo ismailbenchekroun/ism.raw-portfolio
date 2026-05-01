@@ -12,17 +12,44 @@
 </head>
 <body>
   {% include nav.html %}
+
+  <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
+      <li><a href="javascript:void(0)" onclick="closeMobileMenu(); openGalleryPicker();">Gallery</a></li>
       <li><a href="{{ '/about' | relative_url }}" onclick="closeMobileMenu()">About</a></li>
       <li><a href="{{ '/contact' | relative_url }}" onclick="closeMobileMenu()">Contact</a></li>
     </ul>
   </div>
-  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+  <!-- Gallery picker overlay -->
+  <div class="gallery-picker" id="galleryPicker">
+    <button class="gallery-picker-close" onclick="closeGalleryPicker()" aria-label="Close">
+      <span></span><span></span>
+    </button>
+    <div class="gallery-picker-inner">
+      <p class="gallery-picker-label">Select a collection</p>
+      <div class="gallery-picker-grid">
+        {% for g in site.data.galleries %}
+        <a class="gallery-card" href="{{ g.url | relative_url }}" onclick="closeGalleryPicker()">
+          <div class="gallery-card-img">
+            <img src="{{ g.cover | relative_url }}" alt="{{ g.cover_alt }}" loading="lazy" decoding="async">
+          </div>
+          <div class="gallery-card-info">
+            <h3 class="gallery-card-title">{{ g.title }}</h3>
+            <p class="gallery-card-sub">{{ g.subtitle }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
   {{ content }}
 
   {% include footer.html %}
+
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
     <button class="lightbox-prev" onclick="lightboxPrev()" aria-label="Previous">&#8592;</button>
