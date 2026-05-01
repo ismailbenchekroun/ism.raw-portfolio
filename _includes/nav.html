@@ -1,0 +1,15 @@
+<nav>
+  <a href="{{ '/' | relative_url }}" class="nav-logo">{{ site.data.site.name }}</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="{{ '/about' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}>About</a></li>
+      <li><a href="{{ '/contact' | relative_url }}" {% if page.url contains 'contact' %}class="active"{% endif %}>Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span id="themeLabel">Dark</span>
+    </button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

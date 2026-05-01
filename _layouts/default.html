@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.data.site.name }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+  {% include nav.html %}
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="{{ '/about' | relative_url }}" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="{{ '/contact' | relative_url }}" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+  {{ content }}
+
+  {% include footer.html %}
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" onclick="lightboxPrev()" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" onclick="lightboxNext()" aria-label="Next">&#8594;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

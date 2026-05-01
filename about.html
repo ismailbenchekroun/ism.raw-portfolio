@@ -1,0 +1,32 @@
+---
+layout: default
+title: About
+---
+
+<main>
+  <!-- About hero split -->
+  <section class="about-hero">
+    <div class="about-content fade-in">
+      <h1 class="about-name">{{ site.data.about.name }}</h1>
+      <p class="about-subtitle">{{ site.data.about.subtitle }}</p>
+      {% if site.data.about.bio %}
+      <p class="about-bio">{{ site.data.about.bio }}</p>
+      {% endif %}
+    </div>
+    <div class="about-image fade-in delay-1">
+      <img src="{{ site.data.about.portrait | relative_url }}" alt="{{ site.data.about.portrait_alt }}">
+    </div>
+  </section>
+
+  <!-- Rabah section -->
+  <section class="about-section reveal">
+    <div class="split-image">
+      <img src="{{ site.data.about.section_image | relative_url }}" alt="{{ site.data.about.section_image_alt }}" loading="lazy">
+    </div>
+    <div class="split-content">
+      <h2 class="split-title">{{ site.data.about.section_title }}</h2>
+      <p class="split-sub">{{ site.data.about.section_subtitle }}</p>
+      <a href="{{ site.data.about.section_cta_link | relative_url }}" class="btn">{{ site.data.about.section_cta_label }}</a>
+    </div>
+  </section>
+</main>

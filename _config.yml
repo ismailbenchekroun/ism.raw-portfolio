@@ -1,0 +1,15 @@
+title: ism.raw
+description: 35mm film photography. Portraits, lines, and geometrical patterns.
+url: "https://ismailbenchekroun.github.io"
+baseurl: "/ism.raw-portfolio"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

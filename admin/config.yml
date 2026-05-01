@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: ismailbenchekroun/ism.raw-portfolio
+  branch: main
+  auth_type: pkce
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID   # <-- replace this after setup
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# ───────────────────────────────────────────
+# COLLECTIONS — these power the visual editor
+# ───────────────────────────────────────────
+collections:
+
+  # --- HOMEPAGE ---
+  - name: home
+    label: "Homepage"
+    files:
+      - name: home
+        label: "Homepage Content"
+        file: "_data/home.yml"
+        fields:
+          - { label: "Hero Title",     name: hero_title,     widget: string }
+          - { label: "Hero Body Text", name: hero_body,      widget: text }
+          - { label: "Hero Image",     name: hero_image,     widget: image }
+          - { label: "Hero Image Alt", name: hero_image_alt, widget: string }
+          - { label: "Hero Button Label", name: hero_cta_label, widget: string }
+          - { label: "Journey Section Title", name: journey_title, widget: string }
+          - label: "Journey Photos"
+            name: journey_photos
+            widget: list
+            fields:
+              - { label: "Image", name: image, widget: image }
+              - { label: "Alt text", name: alt, widget: string }
+          - { label: "Journey Button Label", name: journey_cta_label, widget: string }
+
+  # --- GALLERY ---
+  - name: gallery
+    label: "Gallery"
+    files:
+      - name: gallery
+        label: "Gallery Photos"
+        file: "_data/gallery.yml"
+        fields:
+          - { label: "Gallery Title", name: title, widget: string }
+          - label: "Photos"
+            name: photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Caption", name: caption, widget: string, required: false }
+
+  # --- ABOUT ---
+  - name: about
+    label: "About"
+    files:
+      - name: about
+        label: "About Page"
+        file: "_data/about.yml"
+        fields:
+          - { label: "Name",     name: name,     widget: string }
+          - { label: "Subtitle", name: subtitle, widget: string }
+          - { label: "Bio",      name: bio,      widget: text }
+          - { label: "Portrait Photo", name: portrait, widget: image }
+          - { label: "Portrait Alt text", name: portrait_alt, widget: string }
+          - { label: "Section Title", name: section_title, widget: string }
+          - { label: "Section Subtitle", name: section_subtitle, widget: string }
+          - { label: "Section Image", name: section_image, widget: image }
+          - { label: "Section CTA Label", name: section_cta_label, widget: string }
+
+  # --- GLOBAL SETTINGS ---
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: site
+        label: "Global Settings"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Site Name",     name: name,          widget: string }
+          - { label: "Email",         name: email,         widget: string }
+          - { label: "Location",      name: location,      widget: string }
+          - { label: "Address Line 1", name: address_line1, widget: string }
+          - { label: "Address Line 2", name: address_line2, widget: string }
+          - { label: "Instagram URL",  name: instagram,     widget: string, required: false }

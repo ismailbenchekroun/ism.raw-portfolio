@@ -1,0 +1,33 @@
+---
+layout: default
+title: Home
+---
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-image fade-in">
+      <img src="{{ site.data.home.hero_image | relative_url }}" alt="{{ site.data.home.hero_image_alt }}" loading="eager">
+    </div>
+    <div class="hero-content fade-in delay-1">
+      <h1 class="hero-title">{{ site.data.home.hero_title }}</h1>
+      <p class="hero-body">{{ site.data.home.hero_body }}</p>
+      <a href="{{ site.data.home.hero_cta_link | relative_url }}" class="btn">{{ site.data.home.hero_cta_label }}</a>
+    </div>
+  </section>
+
+  <!-- Follow the Journey -->
+  <section class="journey">
+    <h2 class="section-title reveal">{{ site.data.home.journey_title }}</h2>
+    <div class="journey-grid">
+      {% for photo in site.data.home.journey_photos %}
+      <div class="journey-item reveal{% if forloop.index > 1 %} delay-1{% endif %}">
+        <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section-cta reveal">
+      <a href="{{ site.data.home.journey_cta_link | relative_url }}" class="btn">{{ site.data.home.journey_cta_label }}</a>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,15 @@
+hero_title: "Something cool is being built here."
+hero_body: "Shooting on 35mm film, with a Nikon F60. I enjoy shooting portraits and composing lines and geometrical patterns in my photos."
+hero_image: "/images/hero.jpg"
+hero_image_alt: "Southbank Centre yellow spiral stairs, London"
+hero_cta_label: "Explore Gallery"
+hero_cta_link: "/gallery"
+
+journey_title: "Follow the Journey"
+journey_cta_label: "Connect"
+journey_cta_link: "/contact"
+journey_photos:
+  - image: "/images/journey-1.jpg"
+    alt: "Man walking on a tropical beach"
+  - image: "/images/journey-2.jpg"
+    alt: "Person swinging in a jungle"
