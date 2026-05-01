@@ -3,7 +3,7 @@ backend:
   repo: ismailbenchekroun/ism.raw-portfolio
   branch: main
   auth_type: pkce
-  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID   # <-- replace this after setup
+  app_id: Ov23liGfiGc07YUeTrgw
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
