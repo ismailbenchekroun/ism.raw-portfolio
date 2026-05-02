@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ismailbenchekroun/ism.raw-portfolio
   branch: main
+  auth_type: pkce
+  app_id: Ov23liGfiGc07YUeTrgw
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
