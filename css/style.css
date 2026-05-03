@@ -200,7 +200,7 @@ nav.nav--hidden { transform: translateY(-100%); }
   background: var(--bg);
   z-index: 400;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
@@ -240,7 +240,8 @@ nav.nav--hidden { transform: translateY(-100%); }
 .gallery-picker-inner {
   width: 100%;
   max-width: 1300px;
-  padding: 80px 40px;
+  padding: 96px 40px 80px;
+  margin: 0 auto;
 }
 
 .gallery-picker-label {
@@ -363,11 +364,15 @@ main { padding-top: var(--nav-h); }
 
 /* === HERO === */
 .hero {
-  padding-top: 0;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  min-height: calc(100vh - var(--nav-h));
 }
 .hero-image {
-  width: 100%;
   background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 .hero-image img {
   width: 100%;
@@ -375,25 +380,21 @@ main { padding-top: var(--nav-h); }
   display: block;
 }
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  gap: 40px;
-  padding: 40px 40px 80px;
-  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 60px 56px;
+  border-left: 1px solid var(--border);
 }
 .hero-title {
-  font-size: clamp(28px, 3vw, 46px);
+  font-size: clamp(26px, 2.4vw, 42px);
   font-weight: 400;
   line-height: 1.18;
   letter-spacing: -0.025em;
 }
 .hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  padding-top: 6px;
+  display: contents;
 }
 .hero-body {
   font-family: var(--sans);
@@ -705,7 +706,9 @@ footer {
   .nav-hamburger { display: flex; }
 
   /* Hero stacked */
-  .hero-content { grid-template-columns: 1fr; gap: 20px; padding: 28px 20px 60px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-image { min-height: 56vw; }
+  .hero-content { padding: 36px 20px 56px; gap: 20px; border-left: none; border-top: 1px solid var(--border); }
   .hero-body { max-width: 100%; }
 
   /* Journey */
