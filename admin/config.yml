@@ -2,7 +2,6 @@ backend:
   name: github
   repo: ismailbenchekroun/ism.raw-portfolio
   branch: main
-  base_url: https://ism-raw-oauth.YOUR_SUBDOMAIN.workers.dev  # update after deploying worker
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
