@@ -1,15 +1,163 @@
-title: ism.raw
-description: 35mm film photography. Portraits, lines, and geometrical patterns.
-url: "https://ism-raw-portfolio.pages.dev"
-baseurl: ""
+media:
+  input: images/uploads
+  output: /images/uploads
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+content:
 
-# Exclude from build
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
+  # --- HOMEPAGE ---
+  - name: home
+    label: Homepage
+    type: file
+    path: _data/home.yml
+    fields:
+      - { name: hero_title,       label: "Hero Title",          type: string }
+      - { name: hero_body,        label: "Hero Body Text",       type: text }
+      - { name: hero_image,       label: "Hero Image",           type: image }
+      - { name: hero_image_alt,   label: "Hero Image Alt",       type: string }
+      - { name: hero_cta_label,   label: "Hero Button Label",    type: string }
+      - { name: journey_title,    label: "Journey Title",        type: string }
+      - name: journey_photos
+        label: "Journey Photos"
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Image,    type: image }
+          - { name: alt,   label: Alt Text, type: string }
+      - { name: journey_cta_label, label: "Journey Button Label", type: string }
+
+  # --- ABOUT ---
+  - name: about
+    label: About
+    type: file
+    path: _data/about.yml
+    fields:
+      - { name: name,              label: "Name",           type: string }
+      - { name: subtitle,          label: "Subtitle",       type: string }
+      - { name: bio,               label: "Bio",            type: text }
+      - { name: portrait,          label: "Portrait Photo", type: image }
+      - { name: portrait_alt,      label: "Portrait Alt",   type: string }
+      - { name: section_title,     label: "Section Title",  type: string }
+      - { name: section_subtitle,  label: "Section Sub",    type: string }
+      - { name: section_image,     label: "Section Image",  type: image }
+      - { name: section_cta_label, label: "Section CTA",    type: string }
+
+  # --- SITE SETTINGS ---
+  - name: site
+    label: Site Settings
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: name,          label: "Site Name",      type: string }
+      - { name: email,         label: "Email",          type: string }
+      - { name: location,      label: "Location",       type: string }
+      - { name: address_line1, label: "Address Line 1", type: string }
+      - { name: address_line2, label: "Address Line 2", type: string }
+      - { name: instagram,     label: "Instagram URL",  type: string }
+
+  # --- GALLERY: LONDON Q1-2026 ---
+  - name: gallery_london
+    label: "Gallery: London Q1-2026"
+    type: file
+    path: _data/gallery_london.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
+
+  # --- GALLERY: 4L ---
+  - name: gallery_4l
+    label: "Gallery: 4L"
+    type: file
+    path: _data/gallery_4l.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
+
+  # --- GALLERY: GUATEMALA ---
+  - name: gallery_guatemala
+    label: "Gallery: Guatemala"
+    type: file
+    path: _data/gallery_guatemala.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
+
+  # --- GALLERY: PORTSU ---
+  - name: gallery_portsu
+    label: "Gallery: Portsu"
+    type: file
+    path: _data/gallery_portsu.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
+
+  # --- GALLERY: B&W ESQUISSE ---
+  - name: gallery_bw
+    label: "Gallery: B&W Esquisse"
+    type: file
+    path: _data/gallery_bw.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
+
+  # --- GALLERY: DIVERS ---
+  - name: gallery_divers
+    label: "Gallery: Divers"
+    type: file
+    path: _data/gallery_divers.yml
+    fields:
+      - { name: title,       label: Title,       type: string }
+      - { name: subtitle,    label: Subtitle,    type: string }
+      - { name: description, label: Description, type: text }
+      - { name: cover,       label: Cover Image, type: image }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image }
+          - { name: caption, label: Caption, type: string }
