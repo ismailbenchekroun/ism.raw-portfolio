@@ -246,8 +246,8 @@ nav.nav--hidden { transform: translateY(-100%); }
 
 .gallery-picker-label {
   font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 14px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 48px;
@@ -365,7 +365,7 @@ main { padding-top: var(--nav-h); }
 /* === HERO === */
 .hero {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   min-height: calc(100vh - var(--nav-h));
 }
 .hero-image {
