@@ -366,17 +366,19 @@ main { padding-top: var(--nav-h); }
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - var(--nav-h));
+  height: calc(100vh - var(--nav-h));
+  max-height: 800px;
 }
 .hero-image {
   background: var(--bg-alt);
-  display: flex;
-  align-items: center;
   overflow: hidden;
+  height: 100%;
 }
 .hero-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 .hero-content {
