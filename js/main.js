@@ -2,6 +2,21 @@
    ISM.RAW — MAIN JS
    ============================================= */
 
+// === NAV HIDE ON SCROLL DOWN / SHOW ON SCROLL UP ===
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 80) {
+      navEl.classList.add('nav--hidden');
+    } else {
+      navEl.classList.remove('nav--hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
 // === DARK MODE ===
 const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
