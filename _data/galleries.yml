@@ -2,30 +2,30 @@
   title: "London Q1-2026"
   subtitle: "January – March 2026"
   description: "Streets, landmarks and quiet geometry from London's first quarter."
-  cover: "/images/uploads/000270550012_25a.jpeg"
-  cover_alt: "Yellow Southbank spiral stairs"
+  cover: "/images/uploads/000270550014_23a.jpeg"
+  cover_alt: "London street photography"
   url: "/gallery/london-q1-26"
 
 - id: 4l
   title: "4L"
   subtitle: "France → Morocco"
   description: "A humanitarian rally across two continents in an old Renault 4L."
-  cover: "/images/4l/000169200001.jpg"
+  cover: "/images/4l/000169200017.jpg"
   cover_alt: "4L Trophy rally"
   url: "/gallery/4l"
 
 - id: guatemala
   title: "Guatemala"
-  subtitle: "Ongoing"
-  description: "Moments collected across borders — beaches, jungles, roads."
-  cover: "/images/Guatemala/IMG_9244.JPG"
-  cover_alt: "Man walking on a tropical beach"
+  subtitle: "Across Borders"
+  description: "Beaches, jungles, roads, and urban pictures."
+  cover: "/images/Guatemala/IMG_9256.JPG"
+  cover_alt: "Guatemala photography"
   url: "/gallery/guatemala"
 
 - id: portsu
   title: "Portsu"
   subtitle: "Portraits"
-  description: "Portraits shot on film."
+  description: "Portugal through the lens of its travelers."
   cover: "/images/Portsu/IMG_4938.JPG"
   cover_alt: "Portrait photography"
   url: "/gallery/portsu"
@@ -33,15 +33,15 @@
 - id: bw-esquisse
   title: "B&W Esquisse"
   subtitle: "Black & White"
-  description: "Studies in black and white."
-  cover: "/images/B%26W%20Esquisse/14370004.jpeg"
+  description: "Studies in contrast, grain and light."
+  cover: "/images/B%26W%20Esquisse/14370007.jpeg"
   cover_alt: "Black and white photography"
   url: "/gallery/bw-esquisse"
 
 - id: divers
   title: "Divers"
   subtitle: "Various"
-  description: "A mix of film photography from various places and moments."
-  cover: "/images/Divers/000188530026.jpg"
+  description: "A mix of film photography from various travels and joyful moments."
+  cover: "/images/Divers/IMG_0961.JPG"
   cover_alt: "Various photography"
   url: "/gallery/divers"

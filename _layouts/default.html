@@ -36,8 +36,9 @@
             <img src="{{ g.cover | relative_url }}" alt="{{ g.cover_alt }}" loading="lazy" decoding="async">
           </div>
           <div class="gallery-card-info">
-            <h3 class="gallery-card-title">{{ g.title }}</h3>
             <p class="gallery-card-sub">{{ g.subtitle }}</p>
+            <h3 class="gallery-card-title">{{ g.title }}</h3>
+            <p class="gallery-card-desc">{{ g.description }}</p>
           </div>
         </a>
         {% endfor %}
