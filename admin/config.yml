@@ -91,13 +91,73 @@ collections:
               - { label: "Photo",   name: image,   widget: image }
               - { label: "Caption", name: caption, widget: string, required: false }
 
-  # --- TRAVELS GALLERY ---
-  - name: gallery_travels
-    label: "Gallery: Travels"
+  # --- GUATEMALA GALLERY ---
+  - name: gallery_guatemala
+    label: "Gallery: Guatemala"
     files:
       - name: photos
         label: "Photos"
-        file: "_data/gallery_travels.yml"
+        file: "_data/gallery_guatemala.yml"
+        fields:
+          - { label: "Title",       name: title,       widget: string }
+          - { label: "Subtitle",    name: subtitle,    widget: string }
+          - { label: "Description", name: description, widget: text }
+          - { label: "Cover Image", name: cover,       widget: image }
+          - label: "Photos"
+            name: photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo",   name: image,   widget: image }
+              - { label: "Caption", name: caption, widget: string, required: false }
+
+  # --- PORTSU GALLERY ---
+  - name: gallery_portsu
+    label: "Gallery: Portsu"
+    files:
+      - name: photos
+        label: "Photos"
+        file: "_data/gallery_portsu.yml"
+        fields:
+          - { label: "Title",       name: title,       widget: string }
+          - { label: "Subtitle",    name: subtitle,    widget: string }
+          - { label: "Description", name: description, widget: text }
+          - { label: "Cover Image", name: cover,       widget: image }
+          - label: "Photos"
+            name: photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo",   name: image,   widget: image }
+              - { label: "Caption", name: caption, widget: string, required: false }
+
+  # --- B&W ESQUISSE GALLERY ---
+  - name: gallery_bw
+    label: "Gallery: B&W Esquisse"
+    files:
+      - name: photos
+        label: "Photos"
+        file: "_data/gallery_bw.yml"
+        fields:
+          - { label: "Title",       name: title,       widget: string }
+          - { label: "Subtitle",    name: subtitle,    widget: string }
+          - { label: "Description", name: description, widget: text }
+          - { label: "Cover Image", name: cover,       widget: image }
+          - label: "Photos"
+            name: photos
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo",   name: image,   widget: image }
+              - { label: "Caption", name: caption, widget: string, required: false }
+
+  # --- DIVERS GALLERY ---
+  - name: gallery_divers
+    label: "Gallery: Divers"
+    files:
+      - name: photos
+        label: "Photos"
+        file: "_data/gallery_divers.yml"
         fields:
           - { label: "Title",       name: title,       widget: string }
           - { label: "Subtitle",    name: subtitle,    widget: string }
