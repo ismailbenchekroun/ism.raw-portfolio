@@ -365,22 +365,17 @@ main { padding-top: var(--nav-h); }
 /* === HERO === */
 .hero {
   display: grid;
-  grid-template-columns: 2fr 5fr;
-  min-height: calc(100vh - var(--nav-h));
-  align-items: center;
+  grid-template-columns: auto 1fr;
+  height: calc(100vh - var(--nav-h));
 }
 .hero-image {
+  height: 100%;
   background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
+  overflow: hidden;
 }
 .hero-image img {
-  max-width: 100%;
-  max-height: calc(100vh - var(--nav-h));
+  height: 100%;
   width: auto;
-  height: auto;
   display: block;
 }
 .hero-content {
@@ -388,7 +383,7 @@ main { padding-top: var(--nav-h); }
   flex-direction: column;
   justify-content: center;
   gap: 28px;
-  padding: 60px 80px;
+  padding: 60px 72px;
 }
 .hero-title {
   font-size: clamp(26px, 2.4vw, 42px);
@@ -709,9 +704,10 @@ footer {
   .nav-hamburger { display: flex; }
 
   /* Hero stacked */
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-image { min-height: 56vw; }
-  .hero-content { padding: 36px 20px 56px; gap: 20px; border-left: none; border-top: 1px solid var(--border); }
+  .hero { grid-template-columns: 1fr; height: auto; }
+  .hero-image { height: auto; }
+  .hero-image img { width: 100%; height: auto; }
+  .hero-content { padding: 36px 20px 56px; gap: 20px; }
   .hero-body { max-width: 100%; }
 
   /* Journey */
