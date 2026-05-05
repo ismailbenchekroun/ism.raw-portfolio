@@ -13,7 +13,7 @@ content:
     fields:
       - { name: hero_title,       label: "Hero Title",          type: string }
       - { name: hero_body,        label: "Hero Body Text",       type: text }
-      - { name: hero_image,       label: "Hero Image",           type: image }
+      - { name: hero_image,       label: "Hero Image",           type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - { name: hero_image_alt,   label: "Hero Image Alt",       type: string }
       - { name: hero_cta_label,   label: "Hero Button Label",    type: string }
       - { name: journey_title,    label: "Journey Title",        type: string }
@@ -22,7 +22,7 @@ content:
         type: object
         list: true
         fields:
-          - { name: image, label: Image,    type: image }
+          - { name: image, label: Image,    type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: alt,   label: Alt Text, type: string }
       - { name: journey_cta_label, label: "Journey Button Label", type: string }
 
@@ -35,11 +35,11 @@ content:
       - { name: name,              label: "Name",           type: string }
       - { name: subtitle,          label: "Subtitle",       type: string }
       - { name: bio,               label: "Bio",            type: text }
-      - { name: portrait,          label: "Portrait Photo", type: image }
+      - { name: portrait,          label: "Portrait Photo", type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - { name: portrait_alt,      label: "Portrait Alt",   type: string }
       - { name: section_title,     label: "Section Title",  type: string }
       - { name: section_subtitle,  label: "Section Sub",    type: string }
-      - { name: section_image,     label: "Section Image",  type: image }
+      - { name: section_image,     label: "Section Image",  type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - { name: section_cta_label, label: "Section CTA",    type: string }
 
   # --- SITE SETTINGS ---
@@ -64,13 +64,13 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: 4L ---
@@ -82,13 +82,13 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: GUATEMALA ---
@@ -100,13 +100,13 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: PORTSU ---
@@ -118,13 +118,13 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: B&W ESQUISSE ---
@@ -136,13 +136,13 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: DIVERS ---
@@ -154,11 +154,11 @@ content:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
       - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image }
+      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image }
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
