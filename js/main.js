@@ -135,12 +135,165 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
 });
 
-// Touch swipe
-let touchStartX = 0;
-document.getElementById('lightbox').addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].clientX;
-}, { passive: true });
-document.getElementById('lightbox').addEventListener('touchend', e => {
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(dx) > 48) dx < 0 ? lightboxNext() : lightboxPrev();
-});
+// === LIGHTBOX TOUCH: SWIPE + PINCH-TO-ZOOM + DOUBLE-TAP ===
+(function () {
+  const lightbox  = document.getElementById('lightbox');
+  const imgWrap   = lightbox.querySelector('.lightbox-img-wrap');
+  const img       = document.getElementById('lightboxImg');
+
+  let scale       = 1;
+  let minScale    = 1;
+  let maxScale    = 4;
+  let originX     = 0; // transform origin offset
+  let originY     = 0;
+  let panX        = 0;
+  let panY        = 0;
+
+  // pinch state
+  let lastPinchDist  = null;
+  let pinchMidX      = 0;
+  let pinchMidY      = 0;
+
+  // swipe state
+  let touchStartX    = 0;
+  let touchStartY    = 0;
+  let swipeBlocked   = false; // blocked when zoomed in
+
+  // double-tap state
+  let lastTap        = 0;
+
+  function applyTransform() {
+    img.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+    img.style.transformOrigin = '50% 50%';
+  }
+
+  function resetZoom() {
+    scale = 1; panX = 0; panY = 0;
+    img.style.transition = 'transform 0.3s ease';
+    applyTransform();
+    setTimeout(() => img.style.transition = '', 300);
+  }
+
+  // clamp pan so image never leaves the viewport
+  function clampPan() {
+    const rect   = imgWrap.getBoundingClientRect();
+    const iW     = rect.width  * scale;
+    const iH     = rect.height * scale;
+    const maxPX  = Math.max(0, (iW  - rect.width)  / 2);
+    const maxPY  = Math.max(0, (iH  - rect.height) / 2);
+    panX = Math.min(maxPX, Math.max(-maxPX, panX));
+    panY = Math.min(maxPY, Math.max(-maxPY, panY));
+  }
+
+  function getDist(t) {
+    const dx = t[0].clientX - t[1].clientX;
+    const dy = t[0].clientY - t[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  function getMid(t) {
+    return {
+      x: (t[0].clientX + t[1].clientX) / 2,
+      y: (t[0].clientY + t[1].clientY) / 2
+    };
+  }
+
+  // Reset zoom whenever a new photo loads
+  const origShow = showLightboxPhoto;
+  window.showLightboxPhoto = function(i) {
+    origShow(i);
+    scale = 1; panX = 0; panY = 0;
+    img.style.transition = '';
+    applyTransform();
+  };
+
+  lightbox.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      // pinch start
+      lastPinchDist = getDist(e.touches);
+      const mid = getMid(e.touches);
+      pinchMidX = mid.x;
+      pinchMidY = mid.y;
+      swipeBlocked = true;
+    } else if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      swipeBlocked = scale > 1;
+
+      // double-tap to zoom
+      const now = Date.now();
+      if (now - lastTap < 280) {
+        e.preventDefault();
+        if (scale > 1) {
+          resetZoom();
+        } else {
+          scale = 2.5;
+          // zoom towards tap point
+          const rect = imgWrap.getBoundingClientRect();
+          panX = (rect.width  / 2 - (e.touches[0].clientX - rect.left)) * (scale - 1) / scale;
+          panY = (rect.height / 2 - (e.touches[0].clientY - rect.top )) * (scale - 1) / scale;
+          clampPan();
+          img.style.transition = 'transform 0.25s ease';
+          applyTransform();
+          setTimeout(() => img.style.transition = '', 250);
+        }
+      }
+      lastTap = now;
+    }
+  }, { passive: false });
+
+  lightbox.addEventListener('touchmove', e => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const dist = getDist(e.touches);
+      const mid  = getMid(e.touches);
+
+      if (lastPinchDist !== null) {
+        const delta = dist / lastPinchDist;
+        const newScale = Math.min(maxScale, Math.max(minScale, scale * delta));
+
+        // adjust pan to keep pinch midpoint stable
+        const rect = imgWrap.getBoundingClientRect();
+        const cx = mid.x - rect.left - rect.width  / 2;
+        const cy = mid.y - rect.top  - rect.height / 2;
+        panX = cx - (cx - panX) * (newScale / scale);
+        panY = cy - (cy - panY) * (newScale / scale);
+        scale = newScale;
+        clampPan();
+        applyTransform();
+      }
+      lastPinchDist = dist;
+
+    } else if (e.touches.length === 1 && scale > 1) {
+      // pan while zoomed
+      e.preventDefault();
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      panX += dx; panY += dy;
+      clampPan();
+      applyTransform();
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: false });
+
+  lightbox.addEventListener('touchend', e => {
+    lastPinchDist = null;
+
+    // snap back to minScale if under-pinched
+    if (scale < 1) {
+      resetZoom();
+      return;
+    }
+
+    // swipe to navigate only when not zoomed
+    if (!swipeBlocked && e.changedTouches.length === 1) {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
+        resetZoom();
+        dx < 0 ? lightboxNext() : lightboxPrev();
+      }
+    }
+  }, { passive: true });
+})();

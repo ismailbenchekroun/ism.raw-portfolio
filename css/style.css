@@ -510,7 +510,7 @@ main { padding-top: var(--nav-h); }
 }
 .lightbox.open { opacity: 1; pointer-events: all; }
 .lightbox-img-wrap { max-width: 90vw; max-height: 85vh; }
-.lightbox-img-wrap img { max-width: 90vw; max-height: 82vh; object-fit: contain; }
+.lightbox-img-wrap img { max-width: 90vw; max-height: 82vh; object-fit: contain; touch-action: none; will-change: transform; }
 .lightbox-caption {
   color: rgba(255,255,255,0.5);
   font-family: var(--sans);
