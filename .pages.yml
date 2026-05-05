@@ -1,6 +1,7 @@
 media:
   input: images/uploads
   output: /images/uploads
+  extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, GIF, webp, WEBP, tif, tiff, avif]
 
 content:
 
