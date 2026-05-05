@@ -18,7 +18,7 @@
   title: "Guatemala"
   subtitle: "Across Borders"
   description: "Beaches, jungles, roads, and urban pictures."
-  cover: "/images/Guatemala/IMG_9256.JPG"
+  cover: "/images/Guatemala/IMG_9256.jpg"
   cover_alt: "Guatemala photography"
   url: "/gallery/guatemala"
 
@@ -26,7 +26,7 @@
   title: "Portsu"
   subtitle: "Portraits"
   description: "Portugal through the lens of its travelers."
-  cover: "/images/Portsu/IMG_4938.JPG"
+  cover: "/images/Portsu/IMG_4938.jpg"
   cover_alt: "Portrait photography"
   url: "/gallery/portsu"
 
@@ -42,6 +42,6 @@
   title: "Divers"
   subtitle: "Various"
   description: "A mix of film photography from various travels and joyful moments."
-  cover: "/images/Divers/IMG_0961.JPG"
+  cover: "/images/Divers/IMG_0961.jpg"
   cover_alt: "Various photography"
   url: "/gallery/divers"
