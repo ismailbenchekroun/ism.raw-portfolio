@@ -4,12 +4,10 @@ hero_body: Shooting on 35mm film, with a Nikon F60. I enjoy shooting portraits
 hero_image: /images/uploads/000270550012_25a.jpeg
 hero_image_alt: Southbank Centre yellow spiral stairs, London
 hero_cta_label: Explore Gallery
+journey_title: Follow the Journey
 journey_photos:
   - image: /images/uploads/img_9244.jpeg
-    alt: Man walking on a tropical beach
+    alt: "Man walking on a tropical beach ! "
   - image: /images/uploads/img_9197.jpeg
     alt: Person swinging in a jungle
 journey_cta_label: Connect
-journey_cta_link: /contact
-hero_cta_link: /gallery
-journey_title: Follow the Journey
