@@ -13,6 +13,13 @@ layout: default
       {% if gallery.description %}<p class="gallery-desc">{{ gallery.description }}</p>{% endif %}
     </div>
 
+    {% if gallery.long_description and gallery.long_description != "" %}
+    <div class="gallery-intro" id="galleryIntro">
+      <p class="gallery-intro-text">{{ gallery.long_description }}</p>
+      <div class="gallery-intro-scroll" aria-hidden="true"><span></span></div>
+    </div>
+    {% endif %}
+
     <div class="gallery-grid">
       {% for photo in gallery.photos %}
       <div class="gallery-item reveal" {% if forloop.index > 3 %}style="transition-delay: {{ forloop.index | times: 0.05 }}s"{% endif %}>

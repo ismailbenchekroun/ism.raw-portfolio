@@ -135,6 +135,23 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
 });
 
+// === GALLERY INTRO SCROLL FADE ===
+(function () {
+  const intro = document.getElementById('galleryIntro');
+  if (!intro) return;
+
+  function update() {
+    const h = intro.offsetHeight;
+    const progress = Math.min(1, window.scrollY / (h * 0.6));
+    intro.style.opacity = 1 - progress;
+    intro.style.transform = `translateY(${-progress * 32}px)`;
+    intro.style.pointerEvents = progress >= 1 ? 'none' : '';
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
 // === LIGHTBOX TOUCH: SWIPE + PINCH-TO-ZOOM + DOUBLE-TAP ===
 (function () {
   const lightbox  = document.getElementById('lightbox');
