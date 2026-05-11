@@ -55,11 +55,30 @@ content:
       - { name: address_line2, label: "Address Line 2", type: string }
       - { name: instagram,     label: "Instagram URL",  type: string }
 
+  # --- GALLERY: LONDON Q2-2026 ---
+  - name: gallery_london_q2_2026
+    label: "Gallery: London Q2-2026"
+    type: file
+    path: _data/gallery_london_q2_2026.yml
+    fields:
+      - { name: title,            label: Title,            type: string }
+      - { name: subtitle,         label: Subtitle,         type: string }
+      - { name: description,      label: Description,      type: text }
+      - { name: long_description, label: Long Description, type: text }
+      - { name: cover,            label: Cover Image,      type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: caption, label: Caption, type: string }
+
   # --- GALLERY: LONDON Q1-2026 ---
-  - name: gallery_london
+  - name: gallery_london_q1_2026
     label: "Gallery: London Q1-2026"
     type: file
-    path: _data/gallery_london.yml
+    path: _data/gallery_london_q1_2026.yml
     fields:
       - { name: title,       label: Title,       type: string }
       - { name: subtitle,    label: Subtitle,    type: string }
