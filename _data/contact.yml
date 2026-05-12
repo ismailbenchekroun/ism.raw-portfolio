@@ -1,10 +1,7 @@
-# --- CONTACT PAGE ---
-session_title: "Request Your Session"
-session_body: "Complete the brief inquiry form below; a private consultation will follow to craft imagery attuned to your vision."
-session_image: "/images/Portsu/IMG_5007.jpg"
-session_image_alt: "Portrait of Lily"
-
-form_title: "Begin a Conversation"
-form_body: "Share your vision, and together we will craft photographs that endure."
-form_action: "https://formspree.io/f/YOUR_FORM_ID"
-submit_label: "Send"
+session_title: Request Your Session
+session_body: "Maybe I can try my best trying to make you look good for insta? "
+session_image: /images/Portsu/IMG_5007.jpg
+session_image_alt: Portrait of Lily
+form_title: Begin a Conversation
+form_action: https://formspree.io/f/YOUR_FORM_ID
+submit_label: Send
