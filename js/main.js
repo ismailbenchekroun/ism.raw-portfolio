@@ -158,8 +158,8 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
     const animP = Math.max(0, (p - 0.15) / 0.85);
     const e = ease(animP);
 
-    // Portrait clips in from the right edge (full → left half)
-    portraitImg.style.clipPath = `inset(0 ${50 * e}% 0 0)`;
+    // Portrait clips in from the right edge (full → 3/4 width)
+    portraitImg.style.clipPath = `inset(0 ${25 * e}% 0 0)`;
 
     // Name panel slides in from right, fades in
     namePanel.style.transform  = `translateX(${(1 - e) * 100}%)`;
