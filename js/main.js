@@ -135,6 +135,44 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
 });
 
+// === ABOUT PAGE: SCROLL-DRIVEN PORTRAIT → NAME ANIMATION ===
+(function () {
+  const stage = document.getElementById('aboutScrollStage');
+  if (!stage) return;
+
+  const portraitImg = document.getElementById('aboutPortraitImg');
+  const namePanel   = document.getElementById('aboutNamePanel');
+  const nudge       = document.getElementById('aboutScrollNudge');
+
+  function ease(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  function update() {
+    const stageTop  = stage.getBoundingClientRect().top + window.scrollY;
+    const scrollable = stage.offsetHeight - window.innerHeight;
+    const raw = (window.scrollY - stageTop) / scrollable;
+    const p  = Math.max(0, Math.min(1, raw));
+
+    // Dead zone: first 15% of scroll — portrait just breathes
+    const animP = Math.max(0, (p - 0.15) / 0.85);
+    const e = ease(animP);
+
+    // Portrait clips in from the right edge (full → left half)
+    portraitImg.style.clipPath = `inset(0 ${50 * e}% 0 0)`;
+
+    // Name panel slides in from right, fades in
+    namePanel.style.transform  = `translateX(${(1 - e) * 100}%)`;
+    namePanel.style.opacity    = Math.max(0, (animP - 0.2) / 0.5);
+
+    // Scroll nudge fades out as name panel arrives
+    nudge.style.opacity = 1 - e;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
 // === GALLERY INTRO SCROLL FADE ===
 (function () {
   const intro = document.getElementById('galleryIntro');

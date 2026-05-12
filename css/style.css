@@ -586,90 +586,79 @@ main { padding-top: var(--nav-h); }
 
 /* === ABOUT === */
 
-/* 1. Opener */
-.about-opener {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: calc(100vh - var(--nav-h));
+/* 1. Scroll stage + sticky */
+.about-scroll-stage {
+  height: 200vh;
+  position: relative;
 }
-.about-opener-img {
+.about-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
-  background: var(--bg-alt);
 }
-.about-opener-img img {
-  width: 100%; height: 100%;
+.about-portrait-full {
+  position: absolute;
+  inset: 0;
+}
+.about-portrait-full img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
+  will-change: clip-path;
 }
-.about-opener-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 64px 72px 52px;
-}
-.about-opener-inner {
-  flex: 1;
+.about-name-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  padding: 60px 72px;
+  background: var(--bg);
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateX(100%);
 }
 .about-opener-name {
-  font-size: clamp(26px, 2.8vw, 48px);
+  font-size: clamp(24px, 2.6vw, 46px);
   font-weight: 400;
   letter-spacing: -0.025em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
-.about-opener-sub {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+.about-sticky-nudge {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  will-change: opacity;
 }
 
-/* 2. Bio */
-.about-bio-section {
-  display: flex;
-  justify-content: center;
+/* 2. Story: camera + bio */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 70vh;
-  padding: 120px 40px;
+  gap: 80px;
+  padding: 140px 80px;
 }
-.about-bio-inner {
-  max-width: 640px;
-  width: 100%;
-}
-.about-bio-inner p {
-  font-family: var(--serif);
-  font-size: clamp(18px, 1.7vw, 26px);
-  font-weight: 400;
-  line-height: 1.75;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-.about-bio-inner p + p {
-  margin-top: 1.5em;
-}
-
-/* 3. Camera photo */
-.about-camera-section {
-  display: flex;
-  justify-content: center;
-  padding: 0 40px 140px;
-}
-.about-camera-img {
-  width: min(460px, 52vw);
-  overflow: hidden;
-  background: var(--bg-alt);
-}
-.about-camera-img img {
+.about-camera-col img {
   width: 100%;
   height: auto;
   display: block;
 }
+.about-bio-col p {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.5vw, 23px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.about-bio-col p + p { margin-top: 1.4em; }
 
-/* 4. CTA */
+/* 3. CTA */
 .about-cta-section {
   display: flex;
   flex-direction: column;
@@ -824,13 +813,29 @@ footer {
   .gallery-intro { padding: 24px 20px 48px; }
   .gallery-intro-text { font-size: clamp(18px, 4.5vw, 26px); }
 
-  /* About */
-  .about-opener { grid-template-columns: 1fr; height: auto; }
-  .about-opener-img { height: 70vw; min-height: 280px; }
-  .about-opener-text { padding: 36px 20px 44px; min-height: 40vw; }
-  .about-bio-section { padding: 72px 20px; min-height: auto; }
-  .about-camera-section { padding: 0 20px 80px; }
-  .about-camera-img { width: 100%; }
+  /* About — disable scroll animation, stack vertically */
+  .about-scroll-stage { height: auto; }
+  .about-sticky {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-portrait-full {
+    position: relative;
+    height: 80vw;
+    min-height: 300px;
+  }
+  .about-portrait-full img { clip-path: none !important; }
+  .about-name-panel {
+    position: relative;
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+    padding: 36px 20px 48px;
+  }
+  .about-sticky-nudge { display: none; }
+  .about-story { grid-template-columns: 1fr; gap: 40px; padding: 64px 20px; }
   .about-cta-section { padding: 72px 20px 100px; }
 
   /* Contact */
