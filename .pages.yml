@@ -181,3 +181,17 @@ content:
         fields:
           - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
           - { name: caption, label: Caption, type: string }
+# --- CONTACT ---
+  - name: contact
+    label: Contact Page
+    type: file
+    path: _data/contact.yml
+    fields:
+      - { name: session_title,     label: "Section Title",        type: string }
+      - { name: session_body,      label: "Section Body Text",    type: text }
+      - { name: session_image,     label: "Session Image",        type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: session_image_alt, label: "Session Image Alt",    type: string }
+      - { name: form_title,        label: "Form Title",           type: string }
+      - { name: form_body,         label: "Form Body Text",       type: text }
+      - { name: form_action,       label: "Formspree Action URL", type: string }
+      - { name: submit_label,      label: "Submit Button Label",  type: string }
