@@ -10,14 +10,14 @@ title: About
     <div class="about-sticky" id="aboutSticky">
 
       <!-- Portrait: clips from right as you scroll -->
-      <div class="about-portrait-full">
+      <div class="about-portrait-full fade-in">
         <img src="{{ site.data.about.portrait | relative_url }}"
              alt="{{ site.data.about.portrait_alt }}"
              loading="eager" id="aboutPortraitImg">
       </div>
 
       <!-- Name panel: slides in from right -->
-      <div class="about-name-panel" id="aboutNamePanel">
+      <div class="about-name-panel fade-in delay-1" id="aboutNamePanel">
         <h1 class="about-opener-name">{{ site.data.about.name }}</h1>
       </div>
 

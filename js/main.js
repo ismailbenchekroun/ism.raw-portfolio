@@ -138,7 +138,7 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
 // === ABOUT PAGE: SCROLL-DRIVEN PORTRAIT → NAME ANIMATION ===
 (function () {
   const stage = document.getElementById('aboutScrollStage');
-  if (!stage) return;
+  if (!stage || window.innerWidth <= 768) return;
 
   const portraitImg = document.getElementById('aboutPortraitImg');
   const namePanel   = document.getElementById('aboutNamePanel');

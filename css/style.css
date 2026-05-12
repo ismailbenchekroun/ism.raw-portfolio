@@ -826,17 +826,19 @@ footer {
     height: 80vw;
     min-height: 300px;
   }
-  .about-portrait-full img { clip-path: none !important; }
   .about-name-panel {
     position: relative;
     width: 100%;
-    transform: none !important;
-    opacity: 1 !important;
     padding: 36px 20px 48px;
+    background: var(--bg);
   }
   .about-sticky-nudge { display: none; }
   .about-story { grid-template-columns: 1fr; gap: 40px; padding: 64px 20px; }
   .about-cta-section { padding: 72px 20px 100px; }
+
+  /* Homepage — tighten gap between hero and journey */
+  .hero-content { padding-bottom: 32px; }
+  .journey { padding-top: 40px; }
 
   /* Contact */
   .contact-session { grid-template-columns: 1fr; min-height: auto; }
