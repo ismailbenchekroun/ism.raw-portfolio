@@ -1,13 +1,16 @@
-name: Ismail T-Benchekroun
-subtitle: Bio
+name: "Ismail T-Benchekroun"
+subtitle: "Bio"
 bio: |
-  It's the chase for me really, the chase of a feeling I first got when I developed my dad's camera, an undeveloped roll from the early 2000s that had been sitting forgotten for twenty years. What came out of it felt like a piece of my family was handed back to me, like time had been quietly waiting to be
-  opened. I've been shooting ever since, because somewhere in that feeling I understood that I was now responsible for doing the same for someone else.
-  Though it started with friends, family, and moments that felt worth preserving — then everything else got to me too. A burst of light cutting through a gap in the buildings, a single human figure dwarfed by some massive, completely ordinary structure in the background. The obsession widened, and little by
-  little, I started seeing pictures everywhere.
-portrait: /Users/ismail/ism-raw-portfolio/images/about ism.raw/IMG_9243.jpg
-portrait_alt: Ismail T-Benchekroun
-section_title: Let's Connect
-section_subtitle: Collaborate, chat, or just say hi :)
-section_image: /Users/ismail/ism-raw-portfolio/images/about ism.raw/09100025.jpg
-section_cta_label: Connect
+  It's the chase for me really, the chase of a feeling I first got when I developed my dad's camera, an undeveloped roll from the early 2000s that had been sitting forgotten for twenty years. What came out of it felt like a piece of my family was handed back to me, like time had been quietly waiting to be opened. I've been shooting ever since, because somewhere in that feeling I understood that I was now responsible for doing the same for someone else.
+
+  Though it started with friends, family, and moments that felt worth preserving — then everything else got to me too. A burst of light cutting through a gap in the buildings, a single human figure dwarfed by some massive, completely ordinary structure in the background. The obsession widened, and little by little, I started seeing pictures everywhere.
+
+portrait: "/images/about%20ism.raw/IMG_9243.jpg"
+portrait_alt: "Ismail T-Benchekroun"
+
+section_title: "Let's Connect"
+section_subtitle: "Collaborate, chat, or just say hi :)"
+section_image: "/images/about%20ism.raw/09100025.jpg"
+section_image_alt: ""
+section_cta_label: "Connect"
+section_cta_link: "/contact"
