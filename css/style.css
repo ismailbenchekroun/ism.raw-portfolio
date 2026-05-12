@@ -585,57 +585,111 @@ main { padding-top: var(--nav-h); }
 .lightbox-next { right: 20px; }
 
 /* === ABOUT === */
-.about-hero {
+
+/* 1. Opener */
+.about-opener {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(80vh - var(--nav-h));
-  align-items: center;
+  height: calc(100vh - var(--nav-h));
 }
-.about-content { padding: 60px 40px; }
-.about-name {
+.about-opener-img {
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.about-opener-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.about-opener-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px 72px 52px;
+}
+.about-opener-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.about-opener-name {
+  font-size: clamp(26px, 2.8vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.about-opener-sub {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* 2. Bio */
+.about-bio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 120px 40px;
+}
+.about-bio-inner {
+  max-width: 640px;
+  width: 100%;
+}
+.about-bio-inner p {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.7vw, 26px);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.about-bio-inner p + p {
+  margin-top: 1.5em;
+}
+
+/* 3. Camera photo */
+.about-camera-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px 140px;
+}
+.about-camera-img {
+  width: min(460px, 52vw);
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.about-camera-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. CTA */
+.about-cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 100px 40px 140px;
+  border-top: 1px solid var(--border);
+}
+.about-cta-title {
   font-size: clamp(32px, 4vw, 60px);
   font-weight: 400;
   letter-spacing: -0.025em;
-  margin-bottom: 8px;
 }
-.about-subtitle {
-  font-family: var(--sans); font-size: 12px;
-  color: var(--text-muted); letter-spacing: 0.06em;
-  text-transform: uppercase; margin-bottom: 28px;
-}
-.about-bio {
-  font-family: var(--sans); font-size: 15px;
-  color: var(--text-2); line-height: 1.8; max-width: 420px;
-}
-.about-image {
-  height: calc(80vh - var(--nav-h));
-  overflow: hidden; background: var(--bg-alt);
-}
-.about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-
-.about-section {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center;
-  border-top: 1px solid var(--border);
-}
-.split-image { height: 60vh; overflow: hidden; background: var(--bg-alt); }
-.split-image img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.about-section:hover .split-image img { transform: scale(1.03); }
-.split-content {
-  padding: 60px 40px;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.split-title {
-  font-size: clamp(28px, 3vw, 52px);
-  font-weight: 400; letter-spacing: -0.025em;
-}
-.split-sub {
-  font-family: var(--sans); font-size: 12px;
-  color: var(--text-muted); letter-spacing: 0.06em;
-  text-transform: uppercase; margin-bottom: 18px;
+.about-cta-sub {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+  max-width: 360px;
 }
 
 /* === CONTACT === */
@@ -771,12 +825,13 @@ footer {
   .gallery-intro-text { font-size: clamp(18px, 4.5vw, 26px); }
 
   /* About */
-  .about-hero { grid-template-columns: 1fr; min-height: auto; }
-  .about-image { height: 60vw; min-height: 240px; order: -1; }
-  .about-content { padding: 36px 20px; }
-  .about-section { grid-template-columns: 1fr; }
-  .split-image { height: 50vw; min-height: 220px; }
-  .split-content { padding: 32px 20px; }
+  .about-opener { grid-template-columns: 1fr; height: auto; }
+  .about-opener-img { height: 70vw; min-height: 280px; }
+  .about-opener-text { padding: 36px 20px 44px; min-height: 40vw; }
+  .about-bio-section { padding: 72px 20px; min-height: auto; }
+  .about-camera-section { padding: 0 20px 80px; }
+  .about-camera-img { width: 100%; }
+  .about-cta-section { padding: 72px 20px 100px; }
 
   /* Contact */
   .contact-session { grid-template-columns: 1fr; min-height: auto; }
