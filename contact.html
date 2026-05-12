@@ -3,27 +3,29 @@ layout: default
 title: Contact
 ---
 
+{% assign c = site.data.contact %}
+
 <main>
   <!-- Request Your Session -->
   <section class="contact-session reveal">
     <div class="contact-session-text">
-      <h1 class="contact-title">Request Your Session</h1>
-      <p class="contact-sub">Complete the brief inquiry form below; a private consultation will follow to craft imagery attuned to your vision.</p>
+      <h1 class="contact-title">{{ c.session_title }}</h1>
+      <p class="contact-sub">{{ c.session_body }}</p>
     </div>
     <div class="contact-session-image">
-      <img src="{{ '/images/Portsu/IMG_5007.jpg' | relative_url }}" alt="Portrait of Lily" loading="lazy">
+      <img src="{{ c.session_image | relative_url }}" alt="{{ c.session_image_alt }}" loading="lazy">
     </div>
   </section>
 
   <!-- Begin a Conversation -->
   <section class="contact-form-section">
     <div class="contact-form-left reveal">
-      <h2 class="contact-form-title">Begin a Conversation</h2>
-      <p class="contact-form-sub">Share your vision, and together we will craft photographs that endure.</p>
+      <h2 class="contact-form-title">{{ c.form_title }}</h2>
+      <p class="contact-form-sub">{{ c.form_body }}</p>
     </div>
     <form
       class="contact-form reveal delay-1"
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action="{{ c.form_action }}"
       method="POST"
     >
       <div class="form-row">
@@ -44,7 +46,7 @@ title: Contact
         <label for="message">Message <span class="required">(required)</span></label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="btn btn-submit">Send</button>
+      <button type="submit" class="btn btn-submit">{{ c.submit_label }}</button>
     </form>
   </section>
 </main>
