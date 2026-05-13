@@ -1,47 +1,25 @@
-title: "Divers"
-subtitle: "Various"
-description: "A mix of film photography from various places and moments."
-cover: "/images/Divers/000188530026.jpg"
+title: Divers
+subtitle: Various
+description: A mix of film photography from various places and moments.
+cover: /images/Divers/000188530026.jpg
 photos:
-  - image: "/images/Divers/000188530026.jpg"
-    caption: ""
-  - image: "/images/Divers/000188530027.jpg"
-    caption: ""
-  - image: "/images/Divers/000188530031.jpg"
-    caption: ""
-  - image: "/images/Divers/000188530036.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170002.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170003.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170004.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170005.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170014.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170018.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170021.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170025.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170026.jpg"
-    caption: ""
-  - image: "/images/Divers/000241170029.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0952.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0959.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0961.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0967.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0968.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0983.jpg"
-    caption: ""
-  - image: "/images/Divers/IMG_0984.jpg"
-    caption: ""
+  - image: /images/Divers/000188530027.jpg
+  - image: /images/Divers/000188530036.jpg
+  - image: /images/Divers/000241170002.jpg
+  - image: /images/Divers/000241170003.jpg
+  - image: /images/Divers/IMG_0983.jpg
+  - image: /images/Divers/000241170004.jpg
+  - image: /images/Divers/000241170021.jpg
+  - image: /images/Divers/IMG_0984.jpg
+  - image: /images/Divers/000241170029.jpg
+  - image: /images/Divers/000241170026.jpg
+  - image: /images/Divers/000241170005.jpg
+  - image: /images/Divers/000188530026.jpg
+  - image: /images/Divers/000241170014.jpg
+  - image: /images/Divers/000188530031.jpg
+  - image: /images/Divers/000241170018.jpg
+  - image: /images/Divers/IMG_0952.jpg
+  - image: /images/Divers/IMG_0959.jpg
+  - image: /images/Divers/IMG_0961.jpg
+  - image: /images/Divers/IMG_0967.jpg
+  - image: /images/Divers/IMG_0968.jpg
