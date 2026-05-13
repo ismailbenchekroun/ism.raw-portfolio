@@ -1,35 +1,21 @@
-title: "Guatemala"
-subtitle: "Ongoing"
-description: "Moments collected across borders — beaches, jungles, roads."
-cover: "/images/Guatemala/IMG_9244.jpg"
+title: Guatemala
+subtitle: Ongoing
+description: Moments collected across borders — beaches, jungles, roads.
+cover: /images/Guatemala/IMG_9244.jpg
 photos:
-  - image: "/images/Guatemala/IMG_9184.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9186.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9191.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9197.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9199.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9210.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9216.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9224.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9243.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9244.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9256.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9258.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9277.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9281.jpg"
-    caption: ""
-  - image: "/images/Guatemala/IMG_9285.jpg"
-    caption: ""
+  - image: /images/Guatemala/IMG_9184.jpg
+  - image: /images/Guatemala/IMG_9186.jpg
+  - image: /images/Guatemala/IMG_9191.jpg
+  - image: /images/Guatemala/IMG_9197.jpg
+  - image: /images/Guatemala/IMG_9199.jpg
+  - image: /images/Guatemala/IMG_9210.jpg
+  - image: /images/Guatemala/IMG_9216.jpg
+  - image: /images/Guatemala/IMG_9224.jpg
+  - image: /images/Guatemala/IMG_9243.jpg
+  - image: /images/Guatemala/IMG_9244.jpg
+  - image: /images/Guatemala/IMG_9256.jpg
+  - image: /images/Guatemala/IMG_9258.jpg
+  - image: /images/Guatemala/IMG_9277.jpg
+  - image: /images/Guatemala/IMG_9281.jpg
+  - image: /images/Guatemala/IMG_9285.jpg
+  - image: /images/uploads/img_9196.jpeg
