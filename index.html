@@ -7,12 +7,15 @@ title: Home
   <!-- Hero -->
   <section class="hero">
     <div class="hero-image fade-in">
-      <img
-        src="{{ site.data.home.hero_image | relative_url }}"
-        alt="{{ site.data.home.hero_image_alt }}"
-        loading="eager"
-        fetchpriority="high"
-      >
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ site.data.home.hero_image_mobile | relative_url }}">
+        <img
+          src="{{ site.data.home.hero_image | relative_url }}"
+          alt="{{ site.data.home.hero_image_alt }}"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </picture>
     </div>
     <div class="hero-content fade-in delay-1">
       <h1 class="hero-title">{{ site.data.home.hero_title }}</h1>
