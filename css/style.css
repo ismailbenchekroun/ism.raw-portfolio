@@ -816,17 +816,17 @@ footer {
 
   /* ── Hero ── */
   .hero { flex-direction: column; height: auto; }
-  /* Portrait ratio fills the phone screen — pair with a vertical image via <picture> */
+  /* Full landscape — no crop, matches film 3:2 ratio */
   .hero-image {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 2;
   }
   .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center;
   }
   .hero-content { padding: 28px 24px 48px; gap: 18px; }
   .hero-body { max-width: 100%; }
