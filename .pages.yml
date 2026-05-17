@@ -1,7 +1,7 @@
 media:
   input: images/uploads
   output: /images/uploads
-  extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, GIF, webp, WEBP, tif, tiff, avif]
+  extensions: [jpg, jpeg, png, webp, gif, avif]
 
 content:
 
@@ -10,37 +10,49 @@ content:
     label: Homepage
     type: file
     path: _data/home.yml
+    # Browse entire images tree so any gallery photo can be picked
+    media:
+      input: images
+      output: /images
+      extensions: [jpg, jpeg, png, webp, gif, avif]
     fields:
-      - { name: hero_title,       label: "Hero Title",          type: string }
-      - { name: hero_body,        label: "Hero Body Text",       type: text }
-      - { name: hero_image,       label: "Hero Image",           type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
-      - { name: hero_image_alt,   label: "Hero Image Alt",       type: string }
-      - { name: hero_cta_label,   label: "Hero Button Label",    type: string }
-      - { name: journey_title,    label: "Journey Title",        type: string }
+      - { name: hero_title,          label: "Hero Title",                    type: string }
+      - { name: hero_body,           label: "Hero Body Text",                type: text }
+      - { name: hero_image,          label: "Hero Image — Desktop",          type: image }
+      - { name: hero_image_mobile,   label: "Hero Image — Mobile",           type: image }
+      - { name: hero_image_alt,      label: "Hero Image Alt Text",           type: string }
+      - { name: hero_cta_label,      label: "Hero Button Label",             type: string }
+      - { name: journey_title,       label: "Journey Section Title",         type: string }
       - name: journey_photos
         label: "Journey Photos"
         type: object
         list: true
         fields:
-          - { name: image, label: Image,    type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
-          - { name: alt,   label: Alt Text, type: string }
-      - { name: journey_cta_label, label: "Journey Button Label", type: string }
+          - { name: image, label: "Photo", type: image }
+          - { name: alt,   label: "Alt Text", type: string }
+      - { name: journey_cta_label,   label: "Journey Button Label",          type: string }
 
   # --- ABOUT ---
   - name: about
     label: About
     type: file
     path: _data/about.yml
+    media:
+      input: images/about ism.raw
+      output: /images/about ism.raw
+      extensions: [jpg, jpeg, png, webp, gif, avif]
     fields:
-      - { name: name,              label: "Name",           type: string }
-      - { name: subtitle,          label: "Subtitle",       type: string }
-      - { name: bio,               label: "Bio",            type: text }
-      - { name: portrait,          label: "Portrait Photo", type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
-      - { name: portrait_alt,      label: "Portrait Alt",   type: string }
-      - { name: section_title,     label: "Section Title",  type: string }
-      - { name: section_subtitle,  label: "Section Sub",    type: string }
-      - { name: section_image,     label: "Section Image",  type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
-      - { name: section_cta_label, label: "Section CTA",    type: string }
+      - { name: name,              label: "Name",                type: string }
+      - { name: subtitle,          label: "Subtitle",            type: string }
+      - { name: bio,               label: "Bio",                 type: text }
+      - { name: portrait,          label: "Portrait Photo",      type: image }
+      - { name: portrait_alt,      label: "Portrait Alt Text",   type: string }
+      - { name: section_title,     label: "CTA Title",           type: string }
+      - { name: section_subtitle,  label: "CTA Subtitle",        type: string }
+      - { name: section_image,     label: "Camera Photo",        type: image }
+      - { name: section_image_alt, label: "Camera Photo Alt",    type: string }
+      - { name: section_cta_label, label: "CTA Button Label",    type: string }
+      - { name: section_cta_link,  label: "CTA Button Link",     type: string }
 
   # --- SITE SETTINGS ---
   - name: site
@@ -60,18 +72,22 @@ content:
     label: "Gallery: London Q2-2026"
     type: file
     path: _data/gallery_london_q2_2026.yml
+    media:
+      input: images/London Q2-2026
+      output: /images/London Q2-2026
+      extensions: [jpg, jpeg, png, webp]
     fields:
       - { name: title,            label: Title,            type: string }
       - { name: subtitle,         label: Subtitle,         type: string }
       - { name: description,      label: Description,      type: text }
-      - { name: long_description, label: Long Description, type: text }
-      - { name: cover,            label: Cover Image,      type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image",    type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: LONDON Q1-2026 ---
@@ -79,17 +95,22 @@ content:
     label: "Gallery: London Q1-2026"
     type: file
     path: _data/gallery_london_q1_2026.yml
+    media:
+      input: images/London Q1-2026
+      output: /images/London Q1-2026
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: 4L ---
@@ -97,17 +118,22 @@ content:
     label: "Gallery: 4L"
     type: file
     path: _data/gallery_4l.yml
+    media:
+      input: images/4l
+      output: /images/4l
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: GUATEMALA ---
@@ -115,17 +141,22 @@ content:
     label: "Gallery: Guatemala"
     type: file
     path: _data/gallery_guatemala.yml
+    media:
+      input: images/Guatemala
+      output: /images/Guatemala
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: PORTSU ---
@@ -133,17 +164,22 @@ content:
     label: "Gallery: Portsu"
     type: file
     path: _data/gallery_portsu.yml
+    media:
+      input: images/Portsu
+      output: /images/Portsu
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: B&W ESQUISSE ---
@@ -151,17 +187,22 @@ content:
     label: "Gallery: B&W Esquisse"
     type: file
     path: _data/gallery_bw.yml
+    media:
+      input: images/B&W Esquisse
+      output: /images/B&W Esquisse
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
 
   # --- GALLERY: DIVERS ---
@@ -169,19 +210,25 @@ content:
     label: "Gallery: Divers"
     type: file
     path: _data/gallery_divers.yml
+    media:
+      input: images/Divers
+      output: /images/Divers
+      extensions: [jpg, jpeg, png, webp]
     fields:
-      - { name: title,       label: Title,       type: string }
-      - { name: subtitle,    label: Subtitle,    type: string }
-      - { name: description, label: Description, type: text }
-      - { name: cover,       label: Cover Image, type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: title,            label: Title,       type: string }
+      - { name: subtitle,         label: Subtitle,    type: string }
+      - { name: description,      label: Description, type: text }
+      - { name: long_description, label: "Long Description (intro screen)", type: text }
+      - { name: cover,            label: "Cover Image", type: image }
       - name: photos
         label: Photos
         type: object
         list: true
         fields:
-          - { name: image,   label: Photo,   type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+          - { name: image,   label: Photo,   type: image }
           - { name: caption, label: Caption, type: string }
-# --- CONTACT ---
+
+  # --- CONTACT ---
   - name: contact
     label: Contact Page
     type: file
@@ -189,7 +236,7 @@ content:
     fields:
       - { name: session_title,     label: "Section Title",        type: string }
       - { name: session_body,      label: "Section Body Text",    type: text }
-      - { name: session_image,     label: "Session Image",        type: image, extensions: [jpg, jpeg, JPG, JPEG, png, PNG, gif, webp] }
+      - { name: session_image,     label: "Session Image",        type: image, extensions: [jpg, jpeg, png, webp] }
       - { name: session_image_alt, label: "Session Image Alt",    type: string }
       - { name: form_title,        label: "Form Title",           type: string }
       - { name: form_body,         label: "Form Body Text",       type: text }
