@@ -828,8 +828,9 @@ footer {
 
   /* ── Nav ── */
   nav { padding: 0 20px; }
-  .nav-links, .theme-toggle { display: none; }
+  .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .theme-toggle { padding: 7px 14px; font-size: 11px; }
   /* Prevent scroll bleed behind overlay menus */
   .mobile-menu { overscroll-behavior: contain; }
 
