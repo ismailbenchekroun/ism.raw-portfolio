@@ -192,6 +192,25 @@ nav.nav--hidden { transform: translateY(-100%); }
   letter-spacing: -0.02em;
   cursor: pointer;
 }
+.mobile-theme-toggle {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 10px 28px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: all var(--ease);
+  white-space: nowrap;
+}
+.mobile-theme-toggle:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
 
 /* === GALLERY PICKER OVERLAY === */
 .gallery-picker {

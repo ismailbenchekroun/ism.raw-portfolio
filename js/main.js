@@ -22,9 +22,13 @@ const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 const themeLabel  = document.getElementById('themeLabel');
 
+const mobileThemeLabel = document.getElementById('mobileThemeLabel');
+
 function applyTheme(theme) {
   html.setAttribute('data-theme', theme);
-  if (themeLabel) themeLabel.textContent = theme === 'dark' ? 'Light' : 'Dark';
+  const label = theme === 'dark' ? 'Light' : 'Dark';
+  if (themeLabel) themeLabel.textContent = label;
+  if (mobileThemeLabel) mobileThemeLabel.textContent = label;
 }
 function toggleTheme() {
   const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
