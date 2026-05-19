@@ -1,7 +1,7 @@
 title: Portsu
 subtitle: Portraits
 description: "Portugal street shots with some familiar faces. "
-cover: /images/Portsu/IMG_4938.jpg
+cover: /images/uploads/img_4939.jpeg
 photos:
   - image: /images/Portsu/IMG_4785.jpg
   - image: /images/Portsu/IMG_4786.jpg
@@ -15,5 +15,4 @@ photos:
     caption: Leading Lines
   - image: /images/Portsu/IMG_4988.jpg
   - image: /images/Portsu/IMG_4989.jpg
-  - image: /images/Portsu/IMG_4996.jpg
   - image: /images/Portsu/img_5007.jpg
